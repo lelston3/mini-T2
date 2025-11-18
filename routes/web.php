@@ -11,6 +11,9 @@ use App\Http\Controllers\ArticleController;
 // GETS -view-
 Route::get('/', [HubController::class, 'hub'])->name('hub');
 Route::get('/view', [HubController::class, 'viewData'])->name('view');
+Route::get('/famille-export', [FamilleController::class, 'export'])->name('famille.export');
+Route::get('/article-export', [ArticleController::class, 'export'])->name('article.export');
+
 
 // POSTS -store-
 Route::post('/famille-store', [FamilleController::class, 'store'])->name('famille.store');

@@ -1,6 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\FamilleExport;
 use App\Models\Famille;
 
 use Illuminate\Http\Request;
@@ -38,4 +41,16 @@ class FamilleController extends Controller
         return redirect()->route('view')
                          ->with('success', 'Famille mise à jour avec succès !');
     }   
+    
+    public function export() 
+    {
+        return Excel::download(new FamilleExport(), 'famille.csv', \Maatwebsite\Excel\Excel::CSV,[
+            'Content-type' => 'text/csv',
+            'Content-Disposition' => 'attachement; filename=famille.csv',
+            'Content-Tranfert-Encoding' => 'binary',
+            'charset' => 'UTF-8',
+            'Content-Encoding' => 'UTF-8'
+
+        ]);
+    }
 }

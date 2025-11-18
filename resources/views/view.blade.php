@@ -11,10 +11,13 @@
 <div class="view">
     <livewire:view-table :title="'Familles'" :table="$Fmodel"/>
     <livewire:man-form :title="'Add Famille'" :table="$Fmodel" />
+    <a href="{{route('famille.export')}}">Export</a>
 </div>
 <div class="view">
     <livewire:view-table :title="'Articles'" :table="$Amodel"/>
     <livewire:man-form :title="'Add Famille'" :table="$Amodel" />
+    <a href="{{route('article.export')}}">Export</a>
 </div>
+
 
 

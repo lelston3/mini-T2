@@ -1,13 +1,17 @@
 <?php
 
+
 namespace App\Http\Controllers;
+
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ArticleExport;
 use App\Models\Article;
 
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
-    //
+    //> Store
     public function store(Request $request)
     {
         //Validation Data
@@ -27,6 +31,7 @@ class ArticleController extends Controller
                          ->with('success', 'Famille créée avec succès !');
     }
 
+    //> Updata
     public function update(Request $request, $id)
     {
         //Validation Data
@@ -45,6 +50,19 @@ class ArticleController extends Controller
         // Redirect success
         return redirect()->route('view')
                          ->with('success', 'Article mis à jour avec succès !');
+    }
+
+    //> Export
+    public function export() 
+    {
+        return Excel::download(new ArticleExport(), 'article.csv', \Maatwebsite\Excel\Excel::CSV,[
+            'Content-type' => 'text/csv',
+            'Content-Disposition' => 'attachement; filename=article.csv',
+            'Content-Tranfert-Encoding' => 'binary',
+            'charset' => 'UTF-8',
+            'Content-Encoding' => 'UTF-8'
+
+        ]);
     }
 
 }

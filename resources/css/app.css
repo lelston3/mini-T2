@@ -37,6 +37,13 @@ body {
     vertical-align: middle;
 }
 
+/* Manage-Bar */
+.man-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
 /* ---- VIEW ---- */
 
 .view{
