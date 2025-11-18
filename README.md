@@ -62,8 +62,12 @@ Assurez-vous d'avoir les outils suivants installés sur votre machine :
     php artisan db:seed
     ```
 **En cas d'erreur** :
-    * Aller dans le fichier de configuration php > ```php.ini``` \n
-    * Dans mon cas il est présent dans le repertoire ```C:\laragon\bin\php\php-8.3.26-Win32-vs16-x64\php.in```
+    * Aller dans le fichier de configuration php
+    ```
+    php.ini
+    ```
+    * Dans mon cas il est présent dans le repertoire 
+    ```C:\laragon\bin\php\php-8.3.26-Win32-vs16-x64\php.in```
     * Rechercher puis activer la ligne ```[ extensions=zip ]```
     -> Enfin lancer
     ```bash
@@ -80,7 +84,7 @@ Assurez-vous d'avoir les outils suivants installés sur votre machine :
     npm run dev
     ```
     ->.  **Compiler mode production** :
-        Le processus de build est l'étape où vos fichiers sources (souvent nombreux, non optimisés, et destinés au développement) sont transformés en un petit ensemble de fichiers          finaux, prêts pour la mise en ligne. :
+        Le processus de build est l'étape où vos fichiers sources (souvent nombreux, non optimisés, et destinés au développement) sont transformés en un petit ensemble de fichiers finaux, prêts pour la mise en ligne. :
         ```bash
         npm run build
         ```
@@ -91,7 +95,7 @@ Assurez-vous d'avoir les outils suivants installés sur votre machine :
     php artisan serve
     ```
 
-(recommandation) : https://laragon.org
+(recommandation) : use directly https://laragon.org
 
 L'application devrait être accessible à l'adresse **`http://t2.test`** (ou l'URL fournie par Laravel).
 
