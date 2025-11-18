@@ -65,7 +65,7 @@ Assurez-vous d'avoir les outils suivants installés sur votre machine :
     -> Aller dans le fichier de configuration php ```php.ini```    
     -> Si vous utiliser laragon ```C:\laragon\bin\php\php-8.3.26-Win32-vs16-x64\php.in```   
     -> Rechercher puis activer la ligne ```[ extensions=zip ]```   
-    --> Enfin lancer ```bash composer update```
+    => Enfin relancer ```bash composer install``` puis 
     
 
 
